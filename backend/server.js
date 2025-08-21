@@ -3,19 +3,22 @@ const mysql = require('mysql2/promise');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const cors = require('cors');
+const dotenv = require('dotenv')
+
+dotenv.config();
 
 const app = express();
-const PORT = 5000;
-const JWT_SECRET = 'inventory-management-key';
+const PORT = process.env.PORT;
+const JWT_SECRET = process.env.JWT_SECRET;
 app.use(cors());
 app.use(express.json()) ;
 
 
 const pool = mysql.createPool({
-  host: 'localhost',
-  user: 'root',
-  password: '', 
-  database: 'sims',
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASSWORD, 
+  database: process.env.DATABASE_NAME,
   waitForConnections: true,
   connectionLimit: 10,
   queueLimit: 0
