@@ -8,7 +8,7 @@ import StockOutForm from './components/StockOutForm';
 import ReportsPage from './components/ReportsPage';
 import Sidebar from './components/Sidebar';
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://stock-inventory-api-89593-a29c1a46f2b9.herokuapp.com/api';
 
 export const AuthContext = React.createContext();
 

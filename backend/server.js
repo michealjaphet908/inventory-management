@@ -35,7 +35,9 @@ function authenticateToken(req, res, next) {
     next();
   });
 }
-
+app.get("/", (req, res) => {
+  res.send("Welcome to Spare Parts Management System API");
+})
 app.post('/api/login', async (req, res) => {
   const { email, password } = req.body;
   console.log(email,password);
